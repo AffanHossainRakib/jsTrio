@@ -20,31 +20,39 @@ const fortuneMessgaeParagraph = document.getElementById("fortune-message");
 fortuneMessgaeParagraph.innerText = `${currentMsg()}`;
 
 // Stopwatch functionalities
-// const timerLimit = 30;
+const timerLimit = 30;
+let interValID = null;
 
-// const movingTimer = () =>
-//   setInterval(() => {
-//     const timeNow = document.getElementById("time-now");
-//     timeNow.innerText = parseInt(timeNow.innerText) + 3;
+const movingTimer = () =>
+  (interValID = setInterval(() => {
+    const timeNow = document.getElementById("time-now");
+    timeNow.innerText = `${parseInt(timeNow.innerText) + 3}`.padStart(2, 0);
 
-//     let currentTime = parseInt(timeNow.innerText);
-//     if (currentTime >= timerLimit) {
-//       clearInterval(movingTimer);
-//     }
-//   }, 1000);
+    let currentTime = parseInt(timeNow.innerText);
+    console.log(currentTime, currentTime > timerLimit);
+    if (currentTime >= timerLimit) {
+      clearInterval(interValID);
+      interValID = null;
+    }
+  }, 1000));
 
-// const startButton = document.getElementById("start-btn");
-// startButton.addEventListener("click", () => {
-//   movingTimer();
-// });
+const startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", () => {
+  if (!interValID) {
+    movingTimer();
+  }
+});
 
-// const stopButton = document.getElementById("stop-btn");
-// stopButton.addEventListener("click", () => {
-//   clearInterval(movingTimer);
-// });
+const stopButton = document.getElementById("stop-btn");
+stopButton.addEventListener("click", () => {
+  clearInterval(interValID);
+  interValID = null;
+});
 
-// const resetButton = document.getElementById("reset-btn");
-// resetButton.addEventListener("click", () => {
-//   timeNow = document.getElementById("time-now");
-//   timeNow.innerText = `00`;
-// });
+const resetButton = document.getElementById("reset-btn");
+resetButton.addEventListener("click", () => {
+  timeNow = document.getElementById("time-now");
+  timeNow.innerText = `00`;
+  clearInterval(interValID);
+  interValID = null;
+});
