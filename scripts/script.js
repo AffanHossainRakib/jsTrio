@@ -16,6 +16,10 @@ const currentMsg = () => {
   return fortuneMessages[idx];
 };
 
-
 const fortuneMessgaeParagraph = document.getElementById("fortune-message");
 fortuneMessgaeParagraph.innerText = `${currentMsg()}`;
+
+const startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", () => {
+  
+});

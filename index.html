@@ -42,6 +42,31 @@
   <body>
     <p id="fortune-message" class="text-center font-semibold mt-10"></p>
 
+    <!-- stop watch -->
+    <section class="flex flex-col items-center mt-10 gap-5">
+      <p class="font-semibold text-2xl">00:00:00</p>
+      <div class="flex items-center justify-center gap-5">
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="start-btn"
+        >
+          Start
+        </button>
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="stop-btn"
+        >
+          Stop
+        </button>
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="reset-btn"
+        >
+          Reset
+        </button>
+      </div>
+    </section>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
