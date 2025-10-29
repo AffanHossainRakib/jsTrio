@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/x-icon" href="assets/heart.png" />
-    <title>jsTrio - Three features from JS</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/heart.png" />
+    <title>jsTrio - Fortune Message</title>
 
     <!-- custom css -->
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="../../styles/style.css" />
 
     <!-- font-awesome cdn -->
     <link
@@ -40,15 +40,11 @@
   </head>
 
   <body>
-    <ul class="flex gap-5 justify-center mt-5 p-5 bg-gray-400">
-      <li>
-        <a href="./pages/fortuneMsg/fortuneMsg.html"> Fortune Message</a>
-      </li>
-      <li>
-        <a href="./pages/stopwatch/stopwatch.html">Stopwatch </a>
-      </li>
-      <li>
-        <a href="./pages/todoList/todoList.html">To-Do List </a>
-      </li>
+    <!-- Fortune Section -->
+    <section id="fortune-section">
+      <p id="fortune-message" class="text-center font-semibold mt-10"></p>
+    </section>
+
+    <script src="./fortuneMsg.js"></script>
   </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="../../assets/heart.png" />
+    <title>jsTrio - Stopwatch</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+
+    <!-- font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- daisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Vercel Web Analytics (vanilla HTML) -->
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- end analytics -->
+  </head>
+
+  <body>
+    <!-- stop watch -->
+    <section
+      id="stopwatch-section"
+      class="flex flex-col items-center mt-10 gap-5"
+    >
+      <div class="flex flex-col items-center">
+        <p class="font-semibold text-2xl">
+          00:00:<span id="time-now">00</span>
+        </p>
+        <p class="font-light text-[#00000050]">HH : MM : SS</p>
+      </div>
+      <div class="flex items-center justify-center gap-5">
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="start-btn"
+        >
+          Start
+        </button>
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="stop-btn"
+        >
+          Stop
+        </button>
+        <button
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"
+          id="reset-btn"
+        >
+          Reset
+        </button>
+      </div>
+
+      <div
+        id="stopwatch-end-notificaiton"
+        role="alert"
+        class="alert alert-success hidden"
+      >
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Stopwatch completed</span>
+      </div>
+    </section>
+    <script src="./stopwatch.js"></script>
+  </body>
+</html>
