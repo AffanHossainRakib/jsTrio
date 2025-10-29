@@ -50,26 +50,39 @@
       >
     </section>
 
-    <script src="./todoList.js"></script>
-
     <input type="checkbox" id="my_modal_7" class="modal-toggle" />
     <div class="modal" role="dialog">
       <div class="modal-box">
-        <div class="card-body">
-          <form class="text-center">
-            <label class="label">Task Heading</label>
-            <br />
-            <input type="text" class="input" placeholder="Task Heading" />
-            <br />
-            <label class="label">Task Details</label>
-            <br />
-            <textarea class="textarea h-36" placeholder="Bio"></textarea>
-            <br />
-            <button class="btn btn-neutral mt-4">Submit Task</button>
-          </form>
-        </div>
+        <form id="task-form" class="text-center space-y-3">
+          <div>
+            <label for="task-heading" class="label">Task Heading</label>
+            <input
+              type="text"
+              name="task-heading"
+              class="input w-full"
+              placeholder="Task Heading"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="task-details" class="label">Task Details</label>
+            <textarea
+              name="task-details"
+              class="textarea w-full h-36"
+              placeholder="Task Details"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-neutral mt-4">
+            Submit Task
+          </button>
+        </form>
       </div>
       <label class="modal-backdrop" for="my_modal_7">Close</label>
     </div>
+
+    <script src="./todoList.js"></script>
   </body>
 </html>
