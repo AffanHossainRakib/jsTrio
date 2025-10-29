@@ -5,19 +5,26 @@ taskForm.addEventListener("submit", (e) => {
   const formData = new FormData(taskForm);
   const taskHeading = formData.get("task-heading");
   const taskDetails = formData.get("task-details");
+  addToLocalStorage(taskHeading, taskDetails);
 });
 
 const addToLocalStorage = (heading, details) => {
-  console.log(heading, details);
+  const currToDoList = getFromLocalStorage();
+  currData = {
+    isDone: false,
+    taskHeading: heading,
+    taskDetails: details,
+  };
+  currToDoList.unshift(currData);
+  localStorage.setItem("toDoList", JSON.stringify(currToDoList));
 };
 
 const getFromLocalStorage = () => {
-  const toDoList = localStorage.getItem("toDoList");
-  if (!toDoList) {
-    localStorage.setItem("toDoList", "");
+  let currToDoList = localStorage.getItem("toDoList");
+  if (!currToDoList) {
+    localStorage.setItem("toDoList", JSON.stringify([]));
   }
-
-  console.log(localStorage.getItem("toDoList"));
+  return JSON.parse(localStorage.getItem("toDoList"));
 };
 
-getFromLocalStorage();
+console.log(getFromLocalStorage());
