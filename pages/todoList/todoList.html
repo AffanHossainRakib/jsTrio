@@ -41,7 +41,35 @@
 
   <body>
     <!-- To-Do List-->
+    <section id="to-do-list">
+      <h1 class="text-5xl text-center">To-Do List</h1>
+
+      <!-- The button to open modal -->
+      <label for="my_modal_7" class="btn"
+        ><i class="fa-solid fa-plus"></i> Add Task</label
+      >
+    </section>
 
     <script src="./todoList.js"></script>
+
+    <input type="checkbox" id="my_modal_7" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box">
+        <div class="card-body">
+          <form class="text-center">
+            <label class="label">Task Heading</label>
+            <br />
+            <input type="text" class="input" placeholder="Task Heading" />
+            <br />
+            <label class="label">Task Details</label>
+            <br />
+            <textarea class="textarea h-36" placeholder="Bio"></textarea>
+            <br />
+            <button class="btn btn-neutral mt-4">Submit Task</button>
+          </form>
+        </div>
+      </div>
+      <label class="modal-backdrop" for="my_modal_7">Close</label>
+    </div>
   </body>
 </html>
