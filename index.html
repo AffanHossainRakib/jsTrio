@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/x-icon" href="assets/heart.png" />
+    <link
+      rel="icon"
+      type="image"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbre3nFkdaWX7yhVbDPUzmLyIPHhWi98aTw&s"
+    />
     <title>jsTrio - Three features from JS</title>
 
     <!-- custom css -->
@@ -39,16 +43,176 @@
     <!-- end analytics -->
   </head>
 
-  <body>
-    <ul class="flex gap-5 justify-center mt-5 p-5 bg-gray-400">
-      <li>
-        <a href="./pages/fortuneMsg/fortuneMsg.html"> Fortune Message</a>
-      </li>
-      <li>
-        <a href="./pages/stopwatch/stopwatch.html">Stopwatch </a>
-      </li>
-      <li>
-        <a href="./pages/todoList/todoList.html">To-Do List </a>
-      </li>
+  <body class="flex flex-col min-h-screen">
+    <!-- Hero Section -->
+    <div class="hero min-h-[60vh] bg-gradient-to-br from-primary to-secondary">
+      <div class="hero-content text-center">
+        <div class="max-w-3xl">
+          <h1
+            class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 drop-shadow-lg"
+          >
+            <i class="fas fa-code"></i> Welcome to jsTrio
+          </h1>
+          <p
+            class="text-xl md:text-2xl mb-8 font-semibold text-gray-800 drop-shadow-md"
+          >
+            Three Interactive JavaScript Mini Projects
+          </p>
+          <p
+            class="text-lg mb-8 max-w-2xl mx-auto text-gray-700 drop-shadow-md"
+          >
+            Explore DOM manipulation, event handling, and local storage through
+            three practical applications built with vanilla JavaScript, Tailwind
+            CSS, and DaisyUI.
+          </p>
+          <a
+            href="#features"
+            class="btn btn-lg btn-accent gap-2 smooth-scroll-btn"
+          >
+            <i class="fas fa-arrow-down"></i>
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="container mx-auto px-4 py-16">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        <i class="fas fa-star text-warning"></i> Featured Projects
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Fortune Message Card -->
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <figure class="px-10 pt-10 flex justify-center items-center">
+            <div class="avatar placeholder">
+              <div
+                class="bg-primary text-primary-content rounded-full w-24 flex items-center justify-center"
+              >
+                <i class="fas fa-star text-5xl"></i>
+              </div>
+            </div>
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-2xl">Fortune Message</h2>
+            <p class="text-base-content/70">
+              Get a random fortune message to brighten your day! Click to
+              discover what the future holds.
+            </p>
+            <div class="badge badge-outline badge-primary mt-2">
+              Random Generation
+            </div>
+            <div class="card-actions mt-4">
+              <a
+                href="./pages/fortuneMsg/fortuneMsg.html"
+                class="btn btn-primary btn-block"
+              >
+                <i class="fas fa-magic"></i>
+                Try Fortune Generator
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stopwatch Card -->
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <figure class="px-10 pt-10 flex justify-center items-center">
+            <div class="avatar placeholder">
+              <div
+                class="bg-secondary text-secondary-content rounded-full w-24 flex items-center justify-center"
+              >
+                <i class="fas fa-stopwatch text-5xl"></i>
+              </div>
+            </div>
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-2xl">Stopwatch</h2>
+            <p class="text-base-content/70">
+              A simple 30-second timer with start, stop, and reset controls.
+              Perfect for timing your tasks!
+            </p>
+            <div class="badge badge-outline badge-secondary mt-2">
+              Event Handling
+            </div>
+            <div class="card-actions mt-4">
+              <a
+                href="./pages/stopwatch/stopwatch.html"
+                class="btn btn-secondary btn-block"
+              >
+                <i class="fas fa-play"></i>
+                Start Stopwatch
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- To-Do List Card -->
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <figure class="px-10 pt-10 flex justify-center items-center">
+            <div class="avatar placeholder">
+              <div
+                class="bg-accent text-accent-content rounded-full w-24 flex items-center justify-center"
+              >
+                <i class="fas fa-list-check text-5xl"></i>
+              </div>
+            </div>
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-2xl">To-Do List</h2>
+            <p class="text-base-content/70">
+              Organize your tasks efficiently! Add, check off, and delete items
+              with localStorage persistence.
+            </p>
+            <div class="badge badge-outline badge-accent mt-2">
+              Local Storage
+            </div>
+            <div class="card-actions mt-4">
+              <a
+                href="./pages/todoList/todoList.html"
+                class="btn btn-accent btn-block"
+              >
+                <i class="fas fa-plus"></i>
+                Manage Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technologies Section -->
+    <div class="bg-base-200 py-16">
+      <div class="container mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-8">Built With</h3>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div class="badge badge-lg badge-outline gap-2 px-4 py-4">
+            <i class="fas fa-code text-yellow-500 text-xl"></i>
+            <span>Vanilla JavaScript</span>
+          </div>
+          <div class="badge badge-lg badge-outline gap-2 px-4 py-4">
+            <i class="fas fa-wind text-blue-500 text-xl"></i>
+            <span>Tailwind CSS</span>
+          </div>
+          <div class="badge badge-lg badge-outline gap-2 px-4 py-4">
+            <i class="fas fa-palette text-purple-500 text-xl"></i>
+            <span>DaisyUI</span>
+          </div>
+          <div class="badge badge-lg badge-outline gap-2 px-4 py-4">
+            <i class="fas fa-icons text-blue-600 text-xl"></i>
+            <span>Font Awesome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Components -->
+    <script src="./scripts/components.js"></script>
   </body>
 </html>
