@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/x-icon" href="../../assets/heart.png" />
+    <link
+      rel="icon"
+      type="image"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbre3nFkdaWX7yhVbDPUzmLyIPHhWi98aTw&s"
+    />
     <title>jsTrio - To-Do List</title>
 
     <!-- custom css -->
@@ -39,50 +43,94 @@
     <!-- end analytics -->
   </head>
 
-  <body>
-    <!-- To-Do List-->
-    <section id="to-do-list">
-      <h1 class="text-5xl text-center">To-Do List</h1>
+  <body class="flex flex-col min-h-screen">
+    <!-- Main Content -->
+    <div class="flex-grow container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <!-- Page Title -->
+        <div class="text-center mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <i class="fas fa-list-check text-accent"></i>
+            To-Do List Manager
+          </h1>
+          <p class="text-lg text-base-content/70">
+            Organize your tasks efficiently with local storage persistence!
+          </p>
+        </div>
 
-      <!-- The button to open modal -->
-      <label for="my_modal_7" class="btn"
-        ><i class="fa-solid fa-plus"></i> Add Task</label
-      >
-    </section>
+        <!-- Add Task Button -->
+        <div class="flex justify-end mb-6">
+          <label for="my_modal_7" class="btn btn-accent btn-lg gap-2">
+            <i class="fas fa-plus"></i> Add New Task
+          </label>
+        </div>
 
+        <!-- Tasks Container -->
+        <div id="tasks-container" class="space-y-4">
+          <!-- Tasks will be dynamically inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16">
+          <i
+            class="fas fa-clipboard-list text-6xl text-base-content/20 mb-4"
+          ></i>
+          <p class="text-xl text-base-content/50">No tasks yet!</p>
+          <p class="text-base-content/40 mt-2">
+            Click "Add New Task" to get started.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Task Modal -->
     <input type="checkbox" id="my_modal_7" class="modal-toggle" />
     <div class="modal" role="dialog">
       <div class="modal-box">
-        <form id="task-form" class="text-center space-y-3">
-          <div>
-            <label for="task-heading" class="label">Task Heading</label>
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-plus-circle text-accent"></i>
+          Add New Task
+        </h3>
+        <form id="task-form" class="space-y-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Task Heading</span>
+            </label>
             <input
               type="text"
               name="task-heading"
-              class="input w-full"
-              placeholder="Task Heading"
+              class="input input-bordered w-full"
+              placeholder="Enter task title..."
               required
             />
           </div>
 
-          <div>
-            <label for="task-details" class="label">Task Details</label>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Task Details</span>
+            </label>
             <textarea
               name="task-details"
-              class="textarea w-full h-36"
-              placeholder="Task Details"
+              class="textarea textarea-bordered h-32 w-full"
+              placeholder="Enter task description..."
               required
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-neutral mt-4">
-            Submit Task
-          </button>
+          <div class="modal-action">
+            <label for="my_modal_7" class="btn btn-ghost">Cancel</label>
+            <button type="submit" class="btn btn-accent gap-2">
+              <i class="fas fa-check"></i>
+              Add Task
+            </button>
+          </div>
         </form>
       </div>
-      <label class="modal-backdrop" for="my_modal_7">Close</label>
+      <label class="modal-backdrop" for="my_modal_7"></label>
     </div>
 
+    <!-- Load Components -->
+    <script src="../../scripts/components.js"></script>
     <script src="./todoList.js"></script>
   </body>
 </html>
