@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/x-icon" href="../../assets/heart.png" />
+    <link
+      rel="icon"
+      type="image"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbre3nFkdaWX7yhVbDPUzmLyIPHhWi98aTw&s"
+    />
     <title>jsTrio - Fortune Message</title>
 
     <!-- custom css -->
@@ -39,12 +43,84 @@
     <!-- end analytics -->
   </head>
 
-  <body>
-    <!-- Fortune Section -->
-    <section id="fortune-section">
-      <p id="fortune-message" class="text-center font-semibold mt-10"></p>
-    </section>
+  <body class="flex flex-col min-h-screen">
+    <!-- Main Content -->
+    <div class="flex-grow container mx-auto px-4 py-12">
+      <div class="max-w-3xl mx-auto">
+        <!-- Page Title -->
+        <div class="text-center mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <i class="fas fa-star text-primary"></i>
+            Fortune Message Generator
+          </h1>
+          <p class="text-lg text-base-content/70">
+            Discover your fortune! Click the button below to reveal a random
+            message.
+          </p>
+        </div>
 
+        <!-- Fortune Card -->
+        <div
+          class="flex flex-col md:flex-row gap-6 items-center justify-center"
+        >
+          <!-- Fortune Box -->
+          <div
+            id="fortune-box"
+            class="border-4 border-primary bg-base-100 shadow-xl p-8 md:p-12 rounded-lg text-center max-w-2xl transition-all duration-300"
+          >
+            <div class="mb-6">
+              <i class="fas fa-star text-6xl text-warning animate-pulse"></i>
+            </div>
+            <p
+              id="fortune-message"
+              class="text-2xl md:text-3xl font-semibold min-h-[80px] flex items-center justify-center"
+            ></p>
+          </div>
+
+          <!-- Color Control Buttons -->
+          <div class="flex md:flex-col gap-4">
+            <button
+              id="color-btn-1"
+              class="w-16 h-16 rounded-lg shadow-lg hover:scale-110 transition-transform duration-200"
+              style="background-color: #ef4444"
+              title="Color Theme 1"
+            ></button>
+            <button
+              id="color-btn-2"
+              class="w-16 h-16 rounded-lg shadow-lg hover:scale-110 transition-transform duration-200"
+              style="background-color: #3b82f6"
+              title="Color Theme 2"
+            ></button>
+            <button
+              id="color-btn-3"
+              class="w-16 h-16 rounded-lg shadow-lg hover:scale-110 transition-transform duration-200"
+              style="background-color: #10b981"
+              title="Color Theme 3"
+            ></button>
+            <button
+              id="color-btn-4"
+              class="w-16 h-16 rounded-lg shadow-lg hover:scale-110 transition-transform duration-200"
+              style="background-color: #f59e0b"
+              title="Color Theme 4"
+            ></button>
+          </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="alert alert-info shadow-lg mt-8">
+          <i class="fas fa-info-circle text-2xl"></i>
+          <div>
+            <h3 class="font-bold">How it works</h3>
+            <div class="text-sm">
+              Clicking on color boxes will change the theme of the fortune box.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Components -->
+    <script src="../../scripts/components.js"></script>
     <script src="./fortuneMsg.js"></script>
   </body>
 </html>
