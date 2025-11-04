@@ -28,6 +28,9 @@ const colorBtn1 = document.getElementById("color-btn-1");
 const colorBtn2 = document.getElementById("color-btn-2");
 const colorBtn3 = document.getElementById("color-btn-3");
 const colorBtn4 = document.getElementById("color-btn-4");
+const previousMessageBtn = document.getElementById(
+  "go-back-to-previous-message"
+);
 
 // Color themes with high contrast
 const colorThemes = [
@@ -86,6 +89,16 @@ const applyTheme = (themeIndex) => {
   fortuneMessageParagraph.style.fontSize = theme.fontSize;
 };
 
+const previousMessage = () => {
+  const currentMsg = fortuneMessageParagraph.innerText;
+  let currMsgIdx = fortuneMessages.indexOf(
+    currentMsg.slice(1, currentMsg.length - 1)
+  );
+  const prevMsgIdx =
+    (currMsgIdx + fortuneMessages.length - 1) % fortuneMessages.length;
+  fortuneMessageParagraph.innerText = `"${fortuneMessages[prevMsgIdx]}"`;
+};
+
 // Display fortune only on page load/refresh
 window.addEventListener("DOMContentLoaded", () => {
   displayFortune();
@@ -96,3 +109,4 @@ colorBtn1.addEventListener("click", () => applyTheme(0));
 colorBtn2.addEventListener("click", () => applyTheme(1));
 colorBtn3.addEventListener("click", () => applyTheme(2));
 colorBtn4.addEventListener("click", () => applyTheme(3));
+previousMessageBtn.addEventListener("click", () => previousMessage());
