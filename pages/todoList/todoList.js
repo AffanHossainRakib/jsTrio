@@ -1,7 +1,9 @@
 const taskForm = document.getElementById("task-form");
+const editTaskForm = document.getElementById("edit-task-form");
 const tasksContainer = document.getElementById("tasks-container");
 const emptyState = document.getElementById("empty-state");
 const modalToggle = document.getElementById("my_modal_7");
+const editModalToggle = document.getElementById("my_modal_70");
 
 // Get tasks from localStorage
 const getFromLocalStorage = () => {
@@ -52,6 +54,39 @@ const toggleTaskStatus = (taskId) => {
       renderTasks();
     }
   }
+};
+
+// Edit task
+const editTask = (taskId) => {
+  const tasks = getFromLocalStorage();
+  const taskIndex = tasks.findIndex((task) => task.id === taskId);
+
+  if (taskIndex !== -1) {
+    editModalToggle.checked = true;
+
+    editTaskForm.addEventListener("submit", (e) => {
+      const formData = new FormData(editTaskForm);
+      const taskHeading = formData.get("task-heading");
+      const taskDetails = formData.get("task-details");
+
+      if (taskHeading) {
+        tasks[taskIndex].taskHeading = taskHeading;
+      }
+      if (taskDetails) {
+        tasks[taskIndex].taskDetails = taskDetails;
+      }
+
+      console.log(tasks);
+      saveToLocalStorage(tasks);
+
+      // Clear form
+      editTaskForm.reset();
+
+      // close modal
+      editModalToggle.checked = false;
+    });
+  }
+  renderTasks();
 };
 
 // Delete task with animation
@@ -125,6 +160,13 @@ const renderTasks = () => {
             title="Delete task"
           >
             <i class="fas fa-trash"></i>
+          </button>
+          <button 
+            onclick="editTask(${task.id})" 
+            class="btn btn-square btn-info btn-sm"
+            title="Edit task"
+          >
+            <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
       </div>

@@ -129,6 +129,50 @@
       <label class="modal-backdrop" for="my_modal_7"></label>
     </div>
 
+    <!-- Edit Task Modal -->
+    <input type="checkbox" id="my_modal_70" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-plus-circle text-accent"></i>
+          Edit The Task
+        </h3>
+        <form id="edit-task-form" class="space-y-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Task Heading</span>
+            </label>
+            <input
+              type="text"
+              name="task-heading"
+              class="input input-bordered w-full"
+              placeholder="Enter task title..."
+            />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Task Details</span>
+            </label>
+            <textarea
+              name="task-details"
+              class="textarea textarea-bordered h-32 w-full"
+              placeholder="Enter task description..."
+            ></textarea>
+          </div>
+
+          <div class="modal-action">
+            <label for="my_modal_70" class="btn btn-ghost">Cancel</label>
+            <button type="submit" class="btn btn-accent gap-2">
+              <i class="fas fa-check"></i>
+              Edit Task
+            </button>
+          </div>
+        </form>
+      </div>
+      <label class="modal-backdrop" for="my_modal_70"></label>
+    </div>
+
     <!-- Load Components -->
     <script src="../../scripts/components.js"></script>
     <script src="./todoList.js"></script>
